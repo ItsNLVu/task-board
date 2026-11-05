@@ -1,0 +1,26 @@
+{
+  "name": "Task Board - Quản lý công việc",
+  "short_name": "Task Board",
+  "description": "Bảng quản lý công việc cá nhân và đội nhóm: Danh sách, Kanban kéo thả, bộ lọc đa tiêu chí và theo dõi deadline.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f8fa",
+  "theme_color": "#5e6ad2",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
