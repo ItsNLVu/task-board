@@ -1,0 +1,160 @@
+@layer theme, base, antd, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+:root {
+  color-scheme: light;
+  --bg: #f7f8fa;
+  --panel: #ffffff;
+  --panel-2: #f2f3f7;
+  --line: #e6e8ee;
+  --line-strong: #9499a6;
+  --ink: #16181d;
+  --ink-2: #525662;
+  --ink-3: #686d7a;
+  --accent: #5e6ad2;
+  --accent-ink: #ffffff;
+  --accent-soft: #eef0ff;
+  --danger: #c81e1e;
+  --danger-soft: #fef2f2;
+  --warning: #b45309;
+  --warning-soft: #fffbeb;
+  --p-high: #c2410c;
+  --p-high-soft: #fff7ed;
+  --p-medium: #1d4ed8;
+  --p-medium-soft: #eff6ff;
+  --p-low: #525662;
+  --p-low-soft: #f2f3f7;
+  --mark: #fde68a;
+  --shadow-card: 0 1px 2px 0 rgb(22 24 29 / 0.04);
+  --shadow-float: 0 16px 36px -8px rgb(22 24 29 / 0.16), 0 2px 6px rgb(22 24 29 / 0.06);
+  --shadow-lift: 0 12px 28px -6px rgb(22 24 29 / 0.18), 0 2px 6px rgb(22 24 29 / 0.08);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0f1115;
+  --panel: #16181d;
+  --panel-2: #1e2128;
+  --line: #262932;
+  --line-strong: #5a6070;
+  --ink: #f3f4f6;
+  --ink-2: #9ca3af;
+  --ink-3: #6b7280;
+  --accent: #6e78ff;
+  --accent-ink: #ffffff;
+  --accent-soft: #1e2248;
+  --danger: #f87171;
+  --danger-soft: #2d1619;
+  --warning: #fbbf24;
+  --warning-soft: #2b2111;
+  --p-high: #fb923c;
+  --p-high-soft: #2c1a12;
+  --p-medium: #60a5fa;
+  --p-medium-soft: #17233b;
+  --p-low: #9ca3af;
+  --p-low-soft: #1e2128;
+  --mark: #5b4612;
+  --shadow-card: 0 1px 2px 0 rgb(0 0 0 / 0.32);
+  --shadow-float: 0 18px 40px -8px rgb(0 0 0 / 0.56), 0 2px 8px rgb(0 0 0 / 0.36);
+  --shadow-lift: 0 14px 32px -6px rgb(0 0 0 / 0.62), 0 2px 8px rgb(0 0 0 / 0.4);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-p-high: var(--p-high);
+  --color-p-high-soft: var(--p-high-soft);
+  --color-p-medium: var(--p-medium);
+  --color-p-medium-soft: var(--p-medium-soft);
+  --color-p-low: var(--p-low);
+  --color-p-low-soft: var(--p-low-soft);
+  --color-mark: var(--mark);
+  --shadow-card: var(--shadow-card);
+  --shadow-float: var(--shadow-float);
+  --shadow-lift: var(--shadow-lift);
+}
+
+@theme {
+  --font-sans: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --radius-chip: 4px;
+  --radius-control: 6px;
+  --radius-panel: 8px;
+  --breakpoint-xs: 30rem;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  input,
+  textarea,
+  select {
+    caret-color: var(--accent);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+
+  mark {
+    background: var(--mark);
+    color: var(--ink);
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
